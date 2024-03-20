@@ -22,15 +22,13 @@ public:
     void SetCylinders(int cylinders) { this->cylinders = cylinders; }
     void SetPower(double power) { this->power = power; }
 
-    string toString() const;
-
+    operator string() const;
     Car& operator++();
     Car operator++(int);
     Car& operator--();
     Car operator--(int);
-    Car& operator=(const Car& secondCar);
+    Car& operator=(const Car& );
 
     friend ostream& operator<<(ostream& out, const Car& car);
     friend istream& operator>>(istream& in, Car& car);
-    
 };

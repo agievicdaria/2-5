@@ -15,29 +15,34 @@ int main() {
     cout << l;
 
     Car myCar("bmw", 4, 200.0);
-    cout << "Initial cylinders: " << myCar.GetCylinders() << endl;
-    cout << "Initial power: " << myCar.GetPower() << endl;
-
+    cout << "Initial values: " << myCar << endl;
     ++myCar;
-    cout << "Cylinders after prefix increment: " << myCar.GetCylinders() << endl;
-
+    cout << "After prefix increment: " << myCar << endl;
     myCar++;
-    cout << "Power after postfix increment: " << myCar.GetPower() << endl;
-
+    cout << "After postfix increment: " << myCar << endl;
     --myCar;
-    cout << "Cylinders after prefix decrement: " << myCar.GetCylinders() << endl;
-
+    cout << "After prefix decrement: " << myCar << endl;
     myCar--;
-    cout << "Power after postfix decrement: " << myCar.GetPower() << endl;
+    cout << "After postfix decrement: " << myCar << endl;
+    cout << "Car: " << myCar <<endl;
+
+    Lorry myLorry(myCar, 500.0);
+    cout << "Before increment:\n" << myLorry << endl;
+    ++myLorry;
+    cout << "After prefix increment:\n" << myLorry << endl;
+    myLorry++;
+    cout << "After postfix increment:\n" << myLorry << endl;
+    --myLorry;
+    cout << "After prefix decrement:\n" << myLorry << endl;
+    myLorry--;
+    cout << "After postfix decrement:\n" << myLorry << endl;
+
 
     cout << "Size of Car without #pragma pack(1): " << sizeof(Car) << endl;
-
     #pragma pack(1)
     cout << "Size of Car with #pragma pack(1): " << sizeof(Car) << endl;
     #pragma pack()
-
     cout << "Size of Lorry without #pragma pack(1): " << sizeof(Lorry) << endl;
-
     #pragma pack(1)
     cout << "Size of Lorry with #pragma pack(1): " << sizeof(Lorry) << endl;
     #pragma pack()

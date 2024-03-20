@@ -31,7 +31,7 @@ Car& Car::operator=(const Car& secondCar) {
 }
 
 ostream& operator<<(ostream& out, const Car& car) {
-    out << "Brand: " << car.brand << ", Cylinders: " << car.cylinders << ", Power: " << car.power << endl;
+    out << string(car);
     return out;
 }
 
@@ -45,10 +45,10 @@ istream& operator>>(istream& in, Car& car) {
     return in;
 }
 
-string Car::toString() const {
-    stringstream sout;
-    sout << "Brand: " << brand << ", Cylinders: " << cylinders << ", Power: " << power << endl;
-    return sout.str();
+Car::operator string () const  {
+    stringstream ss;
+    ss << "Brand: " << brand << ", Cylinders: " << cylinders << ", Power: " << power << endl;
+    return ss.str();
 }
 
 Car& Car::operator++() {

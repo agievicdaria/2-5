@@ -19,10 +19,10 @@ Lorry::Lorry(const Lorry& secondLorry) {
     payload = secondLorry.payload;
 }
 
-string Lorry::toString() const {
-    stringstream sout;
-    sout << "Car: " << car.toString() << "Payload: " << to_string(payload) << endl;
-    return sout.str();
+Lorry::operator string () const  {
+    stringstream ss;
+    ss << "Car: " << car << "Payload: " << payload << endl;
+    return ss.str();
 }
 
 Lorry& Lorry::operator=(const Lorry& secondLorry) {
@@ -34,7 +34,7 @@ Lorry& Lorry::operator=(const Lorry& secondLorry) {
 }
 
 ostream& operator<<(ostream& out, const Lorry& lorry) {
-    out << "Car: " << lorry.car << "Payload: " << lorry.payload << endl;
+    out << string(lorry);
     return out;
 }
 

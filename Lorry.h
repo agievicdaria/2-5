@@ -18,8 +18,8 @@ public:
     Car GetCar() const { return car; }
     double GetPayload() const { return payload; }
 
-    string toString() const;
-
+    
+    operator string() const;
     Lorry& operator++();
     Lorry operator++(int);
     Lorry& operator--();
